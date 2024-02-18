@@ -27,6 +27,15 @@ class XArm():
         self.dev.open()
         print('Connected to xArm device')
 
+        # Move to default position
+        self.move_to(id=1, pos=500, time=1000)
+        self.move_to(id=2, pos=500, time=1000)
+        self.move_to(id=3, pos=-100, time=1000)
+        self.move_to(id=4, pos=-100, time=1000)
+        self.move_to(id=5, pos=500, time=1000)
+        self.move_to(id=6, pos=200, time=1000)
+        time.sleep(2)
+
     def __del__(self):
         print('Closing xArm device')
         self.dev.close()
